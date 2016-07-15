@@ -1,6 +1,5 @@
 package com.zgl.personal.zglmvp.view;
 
-import com.zgl.personal.zglmvp.base.IView;
 import com.zgl.personal.zglmvp.bean.AvatarBean;
 
 import java.util.List;
@@ -9,7 +8,7 @@ import java.util.List;
  * Created by 小立子 on 2016/7/14.
  */
 
-public interface AvatarListView extends IView
+public interface AvatarListView
 {
     /**
      * 显示加载弹窗

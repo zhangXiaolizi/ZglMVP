@@ -7,13 +7,15 @@ import android.widget.Toast;
 
 import com.zgl.personal.zglmvp.R;
 import com.zgl.personal.zglmvp.adapter.AvatarListAdapter;
+import com.zgl.personal.zglmvp.base.BaseActivity;
 import com.zgl.personal.zglmvp.bean.AvatarBean;
 import com.zgl.personal.zglmvp.presenter.AvatarListPersenter;
+import com.zgl.personal.zglmvp.presenter.AvatarNetWorkPersenter;
 import com.zgl.personal.zglmvp.view.AvatarListView;
 
 import java.util.List;
 
-public class AvatarListActivity extends Activity implements AvatarListView
+public class AvatarListActivity extends BaseActivity<AvatarListView , AvatarNetWorkPersenter> implements AvatarListView
 {
     private ListView listView;
 
@@ -24,10 +26,14 @@ public class AvatarListActivity extends Activity implements AvatarListView
         setContentView(R.layout.activity_main);
 
         listView = (ListView) findViewById(R.id.listView);
+        presenter.bindData();
 
-        AvatarListPersenter presenter = new AvatarListPersenter(this);
-        presenter.fetch();
+    }
 
+    @Override
+    protected AvatarNetWorkPersenter createPresenter()
+    {
+        return new AvatarNetWorkPersenter();
     }
 
     @Override

@@ -7,7 +7,7 @@ import java.util.List;
  * Created by 小立子 on 2016/7/14.
  */
 
-public interface IModel
+public interface BaseModel
 {
     void loadData(ResultCallBack callBack);
 

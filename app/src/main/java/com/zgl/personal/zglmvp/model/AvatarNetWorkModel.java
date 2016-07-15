@@ -1,7 +1,9 @@
 package com.zgl.personal.zglmvp.model;
 
+import android.os.SystemClock;
+
 import com.zgl.personal.zglmvp.R;
-import com.zgl.personal.zglmvp.base.IModel;
+import com.zgl.personal.zglmvp.base.BaseModel;
 import com.zgl.personal.zglmvp.bean.AvatarBean;
 
 import java.util.ArrayList;
@@ -11,18 +13,23 @@ import java.util.List;
  * Created by 小立子 on 2016/7/14.
  */
 
-public class AvatarNetWorkModel implements IModel
+public class AvatarNetWorkModel implements BaseModel
 {
     @Override
     public void loadData(ResultCallBack callBack)
     {
-        try
+        //线程休眠5秒钟
+        /*try
         {
             Thread.sleep(5000);
         } catch (InterruptedException e)
         {
             e.printStackTrace();
-        }
+        }*/
+        //模拟网络请求数据
+        //模拟网络延时
+        SystemClock.sleep(5000);
+
         List<AvatarBean> list = new ArrayList<AvatarBean>();
         list.add(new AvatarBean(R.mipmap.image_1,"XiaoMing"));
         list.add(new AvatarBean(R.mipmap.image_2,"XiaoMing"));

@@ -1,7 +1,7 @@
 package com.zgl.personal.zglmvp.model;
 
 import com.zgl.personal.zglmvp.R;
-import com.zgl.personal.zglmvp.base.IModel;
+import com.zgl.personal.zglmvp.base.BaseModel;
 import com.zgl.personal.zglmvp.bean.AvatarBean;
 
 import java.util.ArrayList;
@@ -11,7 +11,7 @@ import java.util.List;
  * Created by 小立子 on 2016/7/14.
  */
 
-public class AvatarListModel implements IModel
+public class AvatarListModel implements BaseModel
 {
     @Override
     public void loadData(ResultCallBack callBack)

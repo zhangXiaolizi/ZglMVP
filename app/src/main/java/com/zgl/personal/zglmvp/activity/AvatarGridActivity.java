@@ -7,7 +7,9 @@ import android.widget.Toast;
 
 import com.zgl.personal.zglmvp.R;
 import com.zgl.personal.zglmvp.adapter.AvatarGridAdapter;
+import com.zgl.personal.zglmvp.base.BaseActivity;
 import com.zgl.personal.zglmvp.bean.AvatarBean;
+import com.zgl.personal.zglmvp.presenter.AvatarListPersenter;
 import com.zgl.personal.zglmvp.presenter.AvatarNetWorkPersenter;
 import com.zgl.personal.zglmvp.view.AvatarListView;
 
@@ -17,7 +19,7 @@ import java.util.List;
  * Created by 小立子 on 2016/7/14.
  */
 
-public class AvatarGridActivity extends Activity implements AvatarListView
+public class AvatarGridActivity extends BaseActivity<AvatarListView,AvatarListPersenter> implements AvatarListView
 {
     GridView gridView;
     @Override
@@ -28,9 +30,14 @@ public class AvatarGridActivity extends Activity implements AvatarListView
 
         gridView = (GridView) findViewById(R.id.gridView);
 
-        AvatarNetWorkPersenter presenter = new AvatarNetWorkPersenter(this);
+        presenter.fetch();
 
-        presenter.bindData();
+    }
+
+    @Override
+    protected AvatarListPersenter createPresenter()
+    {
+        return new AvatarListPersenter();
     }
 
 
