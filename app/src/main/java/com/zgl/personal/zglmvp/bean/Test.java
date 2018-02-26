@@ -7,5 +7,7 @@ package com.zgl.personal.zglmvp.bean;
  */
 
 public class Test {
-    private static final String NAME = "xiaolizi";
+    private void run() {
+        
+    }
 }
