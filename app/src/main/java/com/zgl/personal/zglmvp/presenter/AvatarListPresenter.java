@@ -11,7 +11,7 @@ import java.util.List;
  * Created by 小立子 on 2016/7/14.
  */
 
-public class AvatarListPersenter extends BasePresenter<AvatarListView>
+public class AvatarListPresenter extends BasePresenter<AvatarListView>
 {
     private BaseModel model;
 
